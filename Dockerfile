@@ -22,4 +22,4 @@ EXPOSE 139
 EXPOSE 443
 EXPOSE 445
 STOPSIGNAL SIGTERM
-CMD /bin/bash /opt/entrypoint.sh
+CMD /usr/sbin/apache2ctl -D FOREGROUND
