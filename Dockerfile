@@ -8,14 +8,14 @@ RUN apt-get update \
   && dpkg -i packages-microsoft-prod.deb \
   && apt update \
   && apt install -y powershell \
-  && useradd -ms /bin/bash exfil
-USER exfil
-RUN cd /home/exfil \
+  && useradd -ms /bin/bash exfil \
+  && cd /home/exfil \
   && git clone https://github.com/iagox86/dnscat2.git \
   && cd dnscat2/server \
   && gem install bundler \
   && bundle install
 COPY ./entrypoint.sh /opt/
+USER exfil
 EXPOSE 22
 EXPOSE 80
 EXPOSE 139
