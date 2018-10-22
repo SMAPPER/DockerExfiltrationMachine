@@ -3,7 +3,7 @@ MAINTAINER justin@hasecuritysolutions.com
 
 # Create the log file to be able to   && tail
 RUN apt-get update \
-  && apt -y install curl wget apt-transport-https netcat ssh samba ruby-dev git make g++ \
+  && apt -y install curl wget apt-transport-https netcat ssh samba ruby-dev git make g++ apache2 php \
   && wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
   && dpkg -i packages-microsoft-prod.deb \
   && apt update \
