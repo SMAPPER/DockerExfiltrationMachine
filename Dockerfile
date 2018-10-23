@@ -5,8 +5,7 @@ MAINTAINER justin@hasecuritysolutions.com
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update \
-  && dpkg-reconfigure -f noninteractive tzdata < /dev/null
-RUN apt -y install curl wget apt-transport-https netcat ssh samba ruby-dev git make g++ apache2 php \
+  && apt -y install curl wget apt-transport-https netcat ssh samba ruby-dev git make g++ apache2 php \
   && wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
   && dpkg -i packages-microsoft-prod.deb \
   && apt update \
