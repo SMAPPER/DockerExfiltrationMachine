@@ -17,7 +17,6 @@ RUN apt-get update \
   && gem install bundler \
   && bundle install
 COPY ./entrypoint.sh /opt/
-USER exfil
 EXPOSE 22
 EXPOSE 80
 EXPOSE 139
